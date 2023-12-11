@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Kanvi</string>
+    <string name="bem_vindo">Welcome Back!</string>
+    <string name="desc_login">Enter Your Username and Password</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="btnLogin">Login</string>
+    <string name="esqueceu_senha">Forgotten Password?</string>
+    <string name="nova_conta">Or Create a New Account</string>
+    <string name="kanbi">Kanbi</string>
+    <string name="favoritos">Favoritos</string>
+    <string name="recentes">Recentes</string>
+</resources>

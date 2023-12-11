@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#252525"
+    tools:context=".activity.MainActivity">
+
+    <TextView
+        android:id="@+id/bem_vindo"
+        android:layout_width="241dp"
+        android:layout_height="61dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="106dp"
+        android:layout_marginEnd="146dp"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center_vertical"
+        android:lineHeight="38sp"
+        android:text="@string/bem_vindo"
+        android:textAppearance="@style/bem_vindo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/desc_login"
+        android:layout_width="338dp"
+        android:layout_height="61dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="143dp"
+        android:layout_marginEnd="49dp"
+        android:lineHeight="28sp"
+        android:gravity="center_vertical"
+        android:text="@string/desc_login"
+        android:textAppearance="@style/desc_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="333dp"
+        android:layout_height="31dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="43dp"
+        android:gravity="center_vertical"
+        android:lineHeight="30sp"
+        android:text="@string/username"
+        android:textAppearance="@style/username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc_login" />
+
+    <EditText
+        android:id="@+id/edtUsername"
+        android:layout_width="390dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="38dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.388"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="390dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginEnd="38dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="350dp"
+        android:layout_height="46dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="43dp"
+        android:gravity="center_vertical"
+        android:lineHeight="30sp"
+        android:text="@string/password"
+        android:textAppearance="@style/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtUsername" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="229dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="100dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/btnLogin"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:theme="@style/btnLogin"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPassword"
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="#050505" />
+
+
+    <TextView
+        android:id="@+id/esqueceu_senha"
+        android:layout_width="160dp"
+        android:layout_height="31dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:text="@string/esqueceu_senha"
+        android:textAppearance="@style/esqueceu_senha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <TextView
+        android:id="@+id/nova_conta"
+        android:layout_width="183dp"
+        android:layout_height="31dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:text="@string/nova_conta"
+        android:textAppearance="@style/nova_conta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/esqueceu_senha" />
+</androidx.constraintlayout.widget.ConstraintLayout>
