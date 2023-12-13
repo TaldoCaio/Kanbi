@@ -7,53 +7,39 @@
     android:background="#252525">
 
     <TextView
-        android:id="@+id/textViewFavoritos"
+        android:id="@+id/textViewQuadros"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Favoritos"
+        android:text="Quadros"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
-        android:layout_marginTop="8dp"/>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPagerFavoritos"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@id/textViewFavoritos"
-        android:layout_marginTop="8dp"/>
-
-    <TextView
-        android:id="@+id/textViewRecentes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Recentes"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#FFFFFF"
-        android:layout_below="@id/viewPagerFavoritos"
-        android:layout_marginTop="16dp"/>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPagerRecentes"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@id/textViewRecentes"
-        android:layout_marginTop="8dp"/>
-
-    <Button
-        android:id="@+id/btnAddNote"
-        android:layout_width="157dp"
-        android:layout_height="76dp"
-        android:layout_below="@+id/viewPagerRecentes"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"/>
+
+    <ImageView
+        android:id="@+id/imageViewAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom|end"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="114dp"
-        android:layout_marginBottom="60dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:elevation="2dp"
-        android:text="Adicionar Nota"
-        android:textColor="#FFFFFF" />
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/plus_solid" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewQuadros"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/textViewQuadros"
+        android:layout_marginTop="8dp"
+        android:divider="#FFFFFF"
+        android:dividerHeight="1dp"
+        android:background="#252525"/>
+
 </RelativeLayout>

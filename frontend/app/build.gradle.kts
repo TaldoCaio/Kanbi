@@ -27,7 +27,6 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
-
 dependencies {
 
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -37,6 +36,7 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
     implementation ("androidx.room:room-runtime:2.3.0")
+    implementation ("com.google.guava:guava:30.1-android")
     annotationProcessor ("androidx.room:room-compiler:2.3.0")
     implementation("androidx.room:room-common:2.6.1")
     testImplementation("junit:junit:4.13.2")

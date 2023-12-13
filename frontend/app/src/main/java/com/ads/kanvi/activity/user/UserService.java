@@ -1,7 +1,10 @@
-package com.br.kanbi.user;
+package com.ads.kanvi.activity.user;
 
-import com.br.kanbi.user.response.UserApi;
-import com.br.kanbi.user.response.UserDTO;
+import com.ads.kanvi.activity.RetrofitClient;
+import com.ads.kanvi.activity.card.response.CardApi;
+import com.ads.kanvi.activity.user.response.UserApi;
+import com.ads.kanvi.activity.user.response.UserDTO;
+
 import retrofit2.Call;
 import retrofit2.Response;
 
@@ -11,7 +14,10 @@ import java.util.Optional;
 
 public class UserService {
 
-    private final UserApi userApi;
+    private UserApi userApi;
+    public UserService() {
+        this.userApi = RetrofitClient.getRetrofitInstance().create(UserApi.class);
+    }
 
     public UserService(UserApi userApi) {
         this.userApi = userApi;
@@ -24,7 +30,6 @@ public class UserService {
         if (response.isSuccessful()) {
             return response.body();
         } else {
-            // Tratar erros
             throw new IOException("Error creating user");
         }
     }
