@@ -1,6 +1,6 @@
 package com.ads.kanvi.activity.card;
 
-import static com.ads.kanvi.activity.quadro.QuadroDBHelper.COLUMN_DESCRICAO;
+
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -101,7 +101,7 @@ public class CardDBHelper extends SQLiteOpenHelper {
                 CardDTO card = new CardDTO();
                 card.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
                 card.setDescricao(cursor.getString(cursor.getColumnIndex(COLUMN_DESCRIPTION)));
-                card.setDtInicio(cursor.getColumnIndex(COLUMN_START_DATE));
+                card.setDtInicio(new Date(cursor.getColumnIndex(COLUMN_START_DATE)));
 
                 cardList.add(card);
             } while (cursor.moveToNext());

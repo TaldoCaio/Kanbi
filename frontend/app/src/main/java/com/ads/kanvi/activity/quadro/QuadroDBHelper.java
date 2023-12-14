@@ -19,12 +19,18 @@ public class QuadroDBHelper extends SQLiteOpenHelper {
 
     private static final String TABLE_QUADRO = "quadro_table";
     private static final String COLUMN_ID = "id";
-    private static final String COLUMN_DESCRICAO = "descricao";
+    private static final String COLUMN_DESCRICAO = "quadro_descricao";
+    private static final String COLUMN_CRIADOR = "criador_id";
+    private static final String COLUMN_MAX_LISTA = "max_lista";
+    private static final String COLUMN_STATUS = "status";
 
     private static final String CREATE_TABLE_QUADRO =
             "CREATE TABLE " + TABLE_QUADRO + "(" +
                     COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    COLUMN_DESCRICAO + " TEXT NOT NULL" +
+                    COLUMN_DESCRICAO + " TEXT NOT NULL," +
+                    COLUMN_CRIADOR + " INTEGER NOT NULL," +
+                    COLUMN_MAX_LISTA + " INTEGER," +
+                    COLUMN_STATUS + " TEXT" +
                     ");";
 
     public QuadroDBHelper(Context context) {
@@ -45,6 +51,9 @@ public class QuadroDBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_DESCRICAO, quadro.getDescricao());
+        values.put(COLUMN_CRIADOR, quadro.getCriador());
+        values.put(COLUMN_MAX_LISTA, quadro.getMaxLista());
+        values.put(COLUMN_STATUS, quadro.getStatus());
 
         long id = db.insert(TABLE_QUADRO, null, values);
         db.close();
@@ -53,9 +62,9 @@ public class QuadroDBHelper extends SQLiteOpenHelper {
     }
 
     @SuppressLint("Range")
-    public List<QuadroDTO> getQuadros() {
+    public List<QuadroDTO> getQuadros(Integer userId) {
         List<QuadroDTO> quadros = new ArrayList<>();
-        String selectQuery = "SELECT * FROM " + TABLE_QUADRO;
+        String selectQuery = "SELECT * FROM " + TABLE_QUADRO + " WHERE " + COLUMN_CRIADOR + " = " + userId;
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -65,7 +74,9 @@ public class QuadroDBHelper extends SQLiteOpenHelper {
                 QuadroDTO quadro = new QuadroDTO();
                 quadro.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
                 quadro.setDescricao(cursor.getString(cursor.getColumnIndex(COLUMN_DESCRICAO)));
-
+                quadro.setCriador(cursor.getInt(cursor.getColumnIndex(COLUMN_CRIADOR)));
+                quadro.setMaxLista(cursor.getInt(cursor.getColumnIndex(COLUMN_MAX_LISTA)));
+                quadro.setStatus(cursor.getString(cursor.getColumnIndex(COLUMN_STATUS)));
 
                 quadros.add(quadro);
             } while (cursor.moveToNext());
@@ -76,7 +87,4 @@ public class QuadroDBHelper extends SQLiteOpenHelper {
 
         return quadros;
     }
-
-
-    // Adicione outros métodos conforme necessário para consultar, atualizar e excluir quadros
 }
